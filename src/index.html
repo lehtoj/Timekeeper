@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timekeeper</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="projects.js"></script>
+    <script src="timesheets.js"></script>
+    <script src="statistics.js"></script>
+    <script src="timer.js"></script>
+    <script src="common.js"></script>
+    <script src="localstorage.js"></script>
+</head>
+<body>
+    <h1 class="glow" title="Timekeeper">Timekeeper</h1>
+    <div id="rowDiv">
+        <div id="columnDiv">
+            <button id ="toggleHelp" onclick="toggleHelp()">Show or hide help</button>
+        </div>
+        <div id="columnDiv">
+            <button id="resetLocalStorage" onclick="resetLocalStorage()">Reset page</button>
+        </div>
+    </div>
+    <div id="helpDiv">
+        <p>
+            This simple page will help you keep track of time spent on projects.<br>
+            <ul>
+                <li>Start by adding new projects by entering a project number and name.</li>
+                <li>Add timesheets by selecting a project, entering time spent in minutes, and a description.</li>
+                <li>You may start, stop or reset the timer on this page to help you keep track of time spent.</li>
+                <li>Statistics will show you the total time spent on each project and the percentage of the total time spent.</li>
+                <li>You may reset the page to start over by clicking the reset page button.</li>
+            </ul>
+        </p>
+    </div>
+    <!-- Projects section -->
+    <div id="projectsDiv">
+        <div id="newProjectDiv">
+            <h2>Add new project</h2>
+            <div class="project-inputs">
+                <div class="input-group">
+                    <label for="newProjectNumber">Project number:</label>
+                    <input type="number" id="newProjectNumber" class="numberInput" placeholder="12345">
+                </div>
+                <div class="input-group">
+                    <label for="newProjectName">Project name:</label>
+                    <input type="text" id="newProjectName" class="textInput" placeholder="Project name">
+                </div>
+            </div>
+            <button onclick="addProject()">Add project</button><br>
+            <label id="projectError"></label>
+        </div>
+        
+        <div id="projectTableDiv">
+            <h2>Projects</h2>
+            <table id="projectTable">
+                <tr>
+                    <th></th>
+                    <th>Number</th>
+                    <th>Name</th>
+                </tr>
+                <!-- Projects will be added here -->
+            </table>
+        </div>
+    </div>
+
+    <!-- Timesheets section -->
+    <div id="timesheetsDiv">
+        <div id="timerDiv">
+            <h2>Timer</h2>
+            <button onclick="startTimer()">Start</button>
+            <button onclick="stopTimer()">Stop</button>
+            <button onclick="resetTimer()">Reset</button>
+            <div id="innerTimerDiv"><span id="timer">00:00:00</span></div>
+        </div>
+        
+        <div id="newTimesheetDiv">
+            <h2>Add new timesheet</h2>
+            <div class="project-inputs">
+                <div class="input-group">
+                    <label for="selectProject">Project:</label>
+                    <select id="selectProject">
+                        <!-- Added project numbers will be added here -->
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="timeSpent">Time spent in minutes:</label>
+                    <input type="number" id="timeSpent" class="numberInput" placeholder=30>
+                </div>
+                <div class="input-group">
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" class="textInput" placeholder="Description">
+                </div>
+            </div>
+            <button onclick="addTimesheet()">Add timesheet</button><br>
+            <label id="timesheetError"></label>
+        </div>
+
+        <div id="timesheetTableDiv">
+            <h2>Timesheets</h2>
+            <table id="timesheetTable">
+                <tr>
+                    <th>Project</th>
+                    <th>Minutes</th>
+                    <th>Description</th>
+                </tr>
+                <!-- Timesheets will be added here -->
+            </table>
+        </div>
+
+        <div id="statisticsTableDiv">
+            <h2>Statistics</h2>
+            <table id="statisticsTable">
+                <tr>
+                    <th>Project</th>
+                    <th>Total time spent</th>
+                    <th>% of total</th>
+                </tr>
+                <!-- Statistics will be added here -->
+            </table>
+            <div id="totalTimeSpentDiv">
+                <label for="totalTimeSpent">Total time spent on projects:</label>
+                <label id="totalTimeSpent"></label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

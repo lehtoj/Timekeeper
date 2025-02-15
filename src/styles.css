@@ -1,0 +1,220 @@
+/* Element styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2 {
+    color: #4CAF50;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+p {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+li {
+    margin: 5px 0;
+    font-size: 1em;
+    line-height: 1.5;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 10x;
+    font-weight: bold;
+}
+
+select {
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Class styles */
+.glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1.5s ease-in-out infinite alternate;
+    -moz-animation: glow 1.5s ease-in-out infinite alternate;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4CAF50, 0 0 40px #4CAF50, 0 0 50px #4CAF50, 0 0 60px #4CAF50, 0 0 70px #4CAF50;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #4CAF50, 0 0 50px #4CAF50, 0 0 60px #4CAF50, 0 0 70px #4CAF50, 0 0 80px #4CAF50;
+    }
+}
+
+.project-inputs {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Id styles */
+#timesheetsDiv, #helpDiv {
+    display: none;
+}
+
+#newProjectNumber,
+#timeSpent {
+    width: 100px;
+}
+
+#newProjectName,
+#textInput {
+    flex: 1;
+}
+
+#projectsDiv,
+#timesheetsDiv {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+#newProjectDiv,
+#projectTableDiv,
+#timerDiv {
+    margin-bottom: 20px;
+}
+
+#timer {
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e0f7fa;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    display: inline-block;
+    width: 200px;
+}
+
+#projectError,
+#timesheetError {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#totalTimeSpentDiv {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e0f7fa;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#rowDiv {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#columnDiv button {
+    flex: 50%;
+}
